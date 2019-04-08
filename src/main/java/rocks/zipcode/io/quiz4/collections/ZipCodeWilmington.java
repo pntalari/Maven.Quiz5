@@ -10,12 +10,9 @@ import java.util.TreeMap;
 public class ZipCodeWilmington {
 
     Map<Student, Double> studyMap;
-    Boolean enroll = false;
-    Student student;
 
     public ZipCodeWilmington() {
         studyMap = new HashMap<>();
-        student = new Student();
     }
 
     public void enroll(Student student) {
@@ -24,7 +21,6 @@ public class ZipCodeWilmington {
     }
 
     public Boolean isEnrolled(Student student) {
-
         return student.getEnrolled();
     }
 
@@ -38,5 +34,9 @@ public class ZipCodeWilmington {
     public Map<Student, Double> getStudyMap() {
 
         return studyMap;
+    }
+
+    public void setStudyMap(Student stud, Double hoursLearnt){
+      //  this.studyMap.
     }
 }

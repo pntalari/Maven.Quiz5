@@ -23,7 +23,6 @@ public class Student {
     }
 
     public Double getTotalStudyTime() {
-
         return this.hoursLearnt;
     }
 

@@ -50,6 +50,7 @@ public class IterableTest {
         simpleStringGroup.forEach(string -> result.add(string));
 
         // then
+        System.out.println(group.count());
         Assert.assertEquals(group.count().intValue(), result.size());
     }
 }
