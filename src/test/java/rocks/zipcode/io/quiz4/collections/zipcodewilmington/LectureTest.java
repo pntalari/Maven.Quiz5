@@ -63,8 +63,7 @@ public class LectureTest {
     }
 
     public void test(Double lectureTime, Student... students) {
-        // given
-        ZipCodeWilmington zipCodeWilmington = new ZipCodeWilmington();
+        // givenZipCodeWilmington zipCodeWilmington = new ZipCodeWilmington();
         for (Student student : students) {
             zipCodeWilmington.enroll(student);
             Assert.assertEquals(0.0, student.getTotalStudyTime().doubleValue(), 0);
