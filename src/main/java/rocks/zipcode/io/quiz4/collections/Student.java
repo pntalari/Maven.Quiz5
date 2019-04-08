@@ -40,7 +40,7 @@ public class Student {
     }
 
     public void setHoursLearnt(Double hoursLearnt) {
-        this.hoursLearnt = hoursLearnt;
+        this.hoursLearnt += hoursLearnt;
     }
 
     public Boolean getEnrolled() {

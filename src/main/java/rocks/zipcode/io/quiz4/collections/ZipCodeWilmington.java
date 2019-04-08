@@ -9,15 +9,18 @@ import java.util.TreeMap;
  */
 public class ZipCodeWilmington {
 
+    Map<Student, Double> studyMap;
     Boolean enroll = false;
-    Map<Student,Double> studyMap;
+    Student student;
 
     public ZipCodeWilmington() {
-        studyMap = new TreeMap<>();
+        studyMap = new HashMap<>();
+        student = new Student();
     }
 
     public void enroll(Student student) {
-       student.setEnrolled(true);
+        studyMap.put(student, student.getTotalStudyTime());
+        student.setEnrolled(true);
     }
 
     public Boolean isEnrolled(Student student) {
@@ -26,10 +29,14 @@ public class ZipCodeWilmington {
     }
 
     public void lecture(double numberOfHours) {
-
+        for (Map.Entry<Student,Double> entry: studyMap.entrySet()) {
+            entry.setValue(numberOfHours);
+            entry.getKey().setHoursLearnt(numberOfHours);
+        }
     }
 
     public Map<Student, Double> getStudyMap() {
-        return null;
+
+        return studyMap;
     }
 }
