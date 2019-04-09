@@ -36,7 +36,4 @@ public class ZipCodeWilmington {
         return studyMap;
     }
 
-    public void setStudyMap(Student stud, Double hoursLearnt){
-      //  this.studyMap.
-    }
 }
