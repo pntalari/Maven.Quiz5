@@ -11,7 +11,7 @@ public class ComparableTreeSet<T> extends TreeSet<T> implements Comparable {
     Set<T> sets;
 
     public ComparableTreeSet() {
-        this(null);
+
     }
 
     public ComparableTreeSet(T... arr) {
@@ -22,19 +22,18 @@ public class ComparableTreeSet<T> extends TreeSet<T> implements Comparable {
     }
 
 
-//    public int compareTo(ComparableTreeSet<T> o) {
-//        return Integer.valueOf(null);
-//    }
+    public int compareTo(ComparableTreeSet<T> o) {
+        if (o.compareTo(o) > 1)
+            return -1;
+        else if (o.compareTo(o) < 1)
+            return 1;
+        else
+            return 0;
+    }
 
     @Override
     public int compareTo(Object o) {
         return 0;
-//        if (this.compareTo(o) > 1)
-//            return -1;
-//        else if (this.compareTo(o) < 1)
-//            return 1;
-//        else
-//            return 0;
     }
 
     @Override

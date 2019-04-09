@@ -42,11 +42,11 @@ public class Student {
         this.hoursLearnt += hoursLearnt;
     }
 
-    public Boolean getEnrolled() {
+    public Boolean getIsEnrolled() {
         return isEnrolled;
     }
 
-    public void setEnrolled(Boolean enrolled) {
+    public void setIsEnrolled(Boolean enrolled) {
         isEnrolled = enrolled;
     }
 }
