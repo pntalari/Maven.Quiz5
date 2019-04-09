@@ -11,16 +11,16 @@ public class GenericUtils {
     public static <T extends Comparable> Iterable<? extends Iterable<T>> powerSet(Set<T> originalSet) {
         Set<Set<T>> sets = new HashSet<Set<T>>();
         if (originalSet.isEmpty()) {
-            sets.add(new TreeSet<>());
-         //    sets.descendingSet();
-//            List listRet = new ArrayList(sets);
-//            Collections.sort(listRet,Collections.reverseOrder());
+            sets.add(new HashSet<>());
+  //           ((TreeSet<Set<T>>) sets).descendingIterator();
+            List listRet = new ArrayList(sets);
+            Collections.sort(listRet);
 //            Set setRet = new LinkedHashSet(listRet);
-            return sets;
+            return listRet;
         }
         List<T> list = new ArrayList<T>(originalSet);
         T head = list.get(0);
-        Set<T> rest = new HashSet<T>(list.subList(1, list.size()));
+        Set<T> rest = new HashSet<>(list.subList(1, list.size()));
         for (Iterable<T> set : powerSet(rest)) {
             Set<T> newSet = new HashSet<>();
             newSet.add(head);
@@ -28,15 +28,21 @@ public class GenericUtils {
             sets.add(newSet);
             sets.add((Set<T>) set);
         }
-      //  sets.descendingSet();
+    //    ((TreeSet<Set<T>>) sets).descendingIterator();
 //        List listRet = new ArrayList(sets);
 //        Collections.sort(listRet,Collections.reverseOrder());
 //        Set setRet = new LinkedHashSet(listRet);
-        return sets;
+        List listRet = new ArrayList(sets);
+        Collections.sort(listRet);
+        return listRet;
     }
 
     public static <T extends Comparable> Iterable<? extends Iterable<T>> powerSet(T... originalSet) {
         return powerSet(new TreeSet<>(Arrays.asList(originalSet)));
+    }
+
+    public int compareTo(Object o) {
+        return 0;
     }
 
 

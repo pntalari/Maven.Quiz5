@@ -1,18 +1,18 @@
 package rocks.zipcode.io.quiz4.collections;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
 
 /**
  * @author leon on 11/12/2018.
  */
-public class ZipCodeWilmington {
+public class ZipCodeWilmington  {
 
     Map<Student, Double> studyMap;
 
     public ZipCodeWilmington() {
-        studyMap = new HashMap<>();
+        studyMap = new LinkedHashMap<>();
+        studyMap.clear();
+
     }
 
     public void enroll(Student student) {
@@ -32,6 +32,7 @@ public class ZipCodeWilmington {
     }
 
     public Map<Student, Double> getStudyMap() {
+
         for (Map.Entry<Student, Double> entry : studyMap.entrySet()) {
             entry.setValue(entry.getKey().getTotalStudyTime());
         }

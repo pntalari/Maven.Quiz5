@@ -8,14 +8,14 @@ import java.util.TreeSet;
  */
 public class ComparableTreeSet<T> extends TreeSet<T> implements Comparable {
 
-    Set<T> sets;
+    TreeSet<T> sets;
 
     public ComparableTreeSet() {
 
     }
 
     public ComparableTreeSet(T... arr) {
-        this.sets = new TreeSet<T>();
+        this.sets = new TreeSet<>();
         for (T set : arr) {
             this.sets.add(set);
         }
@@ -23,11 +23,11 @@ public class ComparableTreeSet<T> extends TreeSet<T> implements Comparable {
 
 
     public int compareTo(ComparableTreeSet<T> o) {
-        if (o.compareTo(o) > 1)
-            return -1;
-        else if (o.compareTo(o) < 1)
-            return 1;
-        else
+//        if (o.compareTo(o) > 1)
+//            return -1;
+//        else if (o.compareTo(o) < 1)
+//            return 1;
+//        else
             return 0;
     }
 
