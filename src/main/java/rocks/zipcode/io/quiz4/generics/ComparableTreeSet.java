@@ -1,43 +1,40 @@
 package rocks.zipcode.io.quiz4.generics;
 
+import java.util.Iterator;
 import java.util.Set;
 import java.util.TreeSet;
 
 /**
  * @author leon on 11/12/2018.
  */
-public class ComparableTreeSet<T> extends TreeSet<T> implements Comparable {
-
-    TreeSet<T> sets;
+public class ComparableTreeSet<T extends Comparable> extends TreeSet<T> implements Comparable<ComparableTreeSet<T>> {
 
     public ComparableTreeSet() {
 
     }
 
     public ComparableTreeSet(T... arr) {
-        this.sets = new TreeSet<>();
-        for (T set : arr) {
-            this.sets.add(set);
+        for (T el : arr) {
+            add(el);
         }
     }
 
 
+    @Override
     public int compareTo(ComparableTreeSet<T> o) {
-//        if (o.compareTo(o) > 1)
-//            return -1;
-//        else if (o.compareTo(o) < 1)
-//            return 1;
-//        else
-            return 0;
-    }
+     //   return toString().compareTo(o.toString());
 
-    @Override
-    public int compareTo(Object o) {
+        Iterator<T> other = o.iterator();
+
+        for(T current: this){
+            T otherObj = other.next();
+
+            if(current.compareTo(otherObj) !=0) {
+                return current.compareTo(otherObj);
+            }
+        }
         return 0;
+
     }
 
-    @Override
-    public String toString() {
-        return sets.toString();
-    }
 }

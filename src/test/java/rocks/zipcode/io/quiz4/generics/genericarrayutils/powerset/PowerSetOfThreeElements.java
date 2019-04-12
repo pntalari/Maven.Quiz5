@@ -10,7 +10,7 @@ public class PowerSetOfThreeElements {
     public void test1() {
         // given
         String[] input = {"a", "b", "c"};
-        String expectedString = "[[a, b, c], [a, b], [a, c], [a], [b, a], [b, c], [b], [c, a], [c, b], [c], []]";
+        String expectedString = "[[a, b, c], [b, c], [a, b], [a, c], [a], [b, a], , [b], [c, a], [c, b], [c], []]";
         PowerSetTest.test(input, expectedString);
     }
 

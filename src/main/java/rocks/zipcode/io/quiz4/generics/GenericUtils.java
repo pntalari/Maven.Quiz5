@@ -8,16 +8,16 @@ import java.util.*;
 public class GenericUtils {
 
     public static <T extends Comparable> Iterable<? extends Iterable<T>> powerSet(Set<T> originalSet) {
-        Set<Set<T>> sets = new HashSet<>();
+        Set<Set<T>> sets = new LinkedHashSet<>();
         if (originalSet.isEmpty()) {
             sets.add(new HashSet<>());
             return sets;
         }
         List<T> list = new ArrayList<>(originalSet);
         T head = list.get(0);
-        Set<T> rest = new HashSet<>(list.subList(1, list.size()));
+        Set<T> rest = new LinkedHashSet<>(list.subList(1, list.size()));
         for (Iterable<T> set : powerSet(rest)) {
-            Set<T> newSet = new HashSet<T>();
+            Set<T> newSet = new LinkedHashSet<>();
             newSet.add(head);
             newSet.addAll((Collection<? extends T>) set);
             sets.add(newSet);
